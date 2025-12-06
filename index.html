@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>RAJ OSINT TOOL</title>
+
+<style>
+body {
+    background: black;
+    font-family: "Courier New", monospace;
+    color: #00ff66;
+    margin: 0;
+    padding: 0;
+}
+
+/* neon box */
+.container {
+    width: 85%;
+    margin: 40px auto;
+    border: 2px solid #00ff66;
+    padding: 20px;
+    box-shadow: 0 0 20px #00ff66;
+}
+
+/* glitch heading */
+h1 {
+    color: #00ff66;
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 30px;
+    position: relative;
+    animation: glitch 1s infinite;
+}
+
+@keyframes glitch {
+    0% { text-shadow: 2px 2px #00ff66; }
+    20% { text-shadow: -2px -2px #00cc44; }
+    40% { text-shadow: 2px -2px #00ff88; }
+    60% { text-shadow: -2px 2px #00ff66; }
+    100% { text-shadow: 2px 2px #00ff66; }
+}
+
+/* input design */
+input {
+    width: 90%;
+    padding: 12px;
+    background: black;
+    border: 1px solid #00ff66;
+    color: #00ff66;
+    font-size: 18px;
+    outline: none;
+}
+
+/* button */
+button {
+    margin-top: 20px;
+    width: 94%;
+    padding: 14px;
+    font-size: 20px;
+    background: black;
+    border: 2px solid #00ff66;
+    color: #00ff66;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #003311;
+    box-shadow: 0 0 15px #00ff66;
+}
+
+/* output box */
+#output {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #00ff66;
+    display: none;
+    white-space: pre-wrap;
+    background: rgba(0,255,100,0.08);
+    animation: fade 0.5s;
+}
+
+@keyframes fade {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* scan animation */
+.scan {
+    margin-top: 30px;
+    height: 3px;
+    width: 100%;
+    background: #00ff66;
+    animation: scan 1.5s infinite linear;
+}
+
+@keyframes scan {
+    0% {opacity: 0;}
+    50% {opacity: 1;}
+    100% {opacity: 0;}
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+    <h1>RAJ OSINT TOOL</h1>
+
+    <label>ENTER PHONE NUMBER:</label><br><br>
+    <input type="text" id="number" placeholder="Please enter the phone number">
+
+    <button onclick="runOSINT()">SEARCH</button>
+
+    <div id="output"></div>
+    <div class="scan"></div>
+
+</div>
+
+
+<script>
+function runOSINT() {
+    let num = document.getElementById("number").value.trim();
+
+    if(num === ""){
+        alert("Enter any number!");
+        return;
+    }
+
+    const data =
+`Name: Arjun Singh
+Father: Amit Kumar Singh
+Address: Amaon Baraon!!amaon amaon amaon baraon!amawan Chand!kaimur bhabua!Bihar!821104
+Alt: 754288400
+Circle: JIO BHR&JHR
+ID: 743845879769`;
+
+    let out = document.getElementById("output");
+    out.style.display = "block";
+    out.textContent = data;
+}
+</script>
+
+</body>
+</html>
